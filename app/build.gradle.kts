@@ -7,6 +7,9 @@ import dependencies.Ktor
 import dependencies.Serialization
 import dependencies.Kotlin
 import dependencies.KeyHelper
+import dependencies.Glide
+import dependencies.Navigation
+
 
 
 plugins {
@@ -18,6 +21,7 @@ plugins {
     kotlin("plugin.serialization") version "1.5.31"
     id("kotlin-android")
     id ("com.google.devtools.ksp") version "1.6.10-1.0.2"
+    id("androidx.navigation.safeargs.kotlin")
 
 }
 
@@ -65,7 +69,6 @@ android {
 
 
 dependencies {
-//    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation (Kotlin.kotlinStdlib)
 
     implementation(AndroidX.constraintlayout)
@@ -79,7 +82,6 @@ dependencies {
     implementation(Google.material)
     implementation(Hilt.android)
     implementation(Hilt.hiltNavigation)
-
     kapt(Hilt.compiler)
 
     implementation(Kotlinx.coroutinesCore)
@@ -91,6 +93,13 @@ dependencies {
     implementation(Ktor.android)
     implementation(Ktor.ktorJson)
     implementation(Ktor.logging)
+
+    implementation(Navigation.navigation_fragment)
+    implementation(Navigation.navigation_ui)
+
+    implementation(Glide.glide)
+    kapt(Glide.gildeCompiler)
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
