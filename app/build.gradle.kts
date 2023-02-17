@@ -88,11 +88,6 @@ dependencies {
 
     implementation(Serialization.serialization)
 
-    implementation(Ktor.core)
-    implementation(Ktor.clientSerialization)
-    implementation(Ktor.android)
-    implementation(Ktor.ktorJson)
-    implementation(Ktor.logging)
 
     implementation(Navigation.navigation_fragment)
     implementation(Navigation.navigation_ui)
