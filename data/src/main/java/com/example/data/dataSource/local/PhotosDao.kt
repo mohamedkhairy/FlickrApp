@@ -19,5 +19,7 @@ interface PhotosDao {
     @Query("DELETE FROM favorites_photos WHERE id = :photoId")
     fun deleteByPhotoId(photoId: String): Long
 
+    @Query("SELECT EXISTS (SELECT 1 FROM favorites_photos WHERE id = :id)")
+    fun isExist(id: String): Boolean
 
 }

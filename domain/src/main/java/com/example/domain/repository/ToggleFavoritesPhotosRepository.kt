@@ -8,4 +8,5 @@ interface ToggleFavoritesPhotosRepository {
 
     suspend fun removeFromFavorites(id: String): Long
 
+    suspend fun isFavorite(id: String): Boolean
 }

@@ -23,4 +23,10 @@ class ToggleFavoritesPhotosRepositoryImp @Inject constructor(private val photosD
         }
     }
 
+    override suspend fun isFavorite(id: String): Boolean {
+        return withContext(Dispatchers.IO){
+            photosDto.isExist(id)
+        }
+    }
+
 }
