@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GalleryPhotosServiceImpl @Inject constructor(val httpClient: HttpClient):
     GalleryPhotosService {
 
-    override suspend fun callGalleryPhotos(userId: String): FlickrPhotosDto {
+    override suspend fun callGalleryPhotos(): FlickrPhotosDto {
         return httpClient.get<FlickrPhotosDto> {
             url(EndPoints.getEndpointUrl())
         }

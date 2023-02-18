@@ -1,3 +1,6 @@
+import dependencies.Arrow
+
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -34,6 +37,8 @@ android {
 }
 
 dependencies {
+
+    implementation(Arrow.arrow)
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

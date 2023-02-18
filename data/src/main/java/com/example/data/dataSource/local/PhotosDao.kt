@@ -11,13 +11,13 @@ import kotlinx.coroutines.flow.Flow
 interface PhotosDao {
 
     @Query("SELECT * FROM favorites_photos")
-     fun getAll(): List<FavoritesPhotosEntity?>
+     fun getAll(): ArrayList<FavoritesPhotosEntity>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun save(favoritesPhotos: FavoritesPhotosEntity)
+    fun save(favoritesPhotos: FavoritesPhotosEntity): Long
 
     @Query("DELETE FROM favorites_photos WHERE id = :photoId")
-    fun deleteByPhotoId(photoId: String)
+    fun deleteByPhotoId(photoId: String): Long
 
 
 }

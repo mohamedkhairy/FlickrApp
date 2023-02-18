@@ -4,6 +4,7 @@ import dependencies.Kotlinx
 import dependencies.Ktor
 import dependencies.KeyHelper
 import dependencies.Room
+import dependencies.Arrow
 
 plugins {
     id("com.android.library")
@@ -49,6 +50,8 @@ dependencies {
     implementation(AndroidX.appCompat)
 
     implementation(Kotlinx.javaxInject)
+    implementation(Arrow.arrow)
+
 
     implementation(Ktor.core)
     implementation(Ktor.clientSerialization)

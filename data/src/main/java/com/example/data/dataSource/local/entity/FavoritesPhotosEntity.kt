@@ -6,10 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "favorites_photos")
 data class FavoritesPhotosEntity (
     @PrimaryKey
-    val id: Int,
+    val id: String,
     val title: String,
-    val image: String,
-    val farmId: String,
-    val secret: String,
-    val serverId: String
+    val imageUrl: String
 )

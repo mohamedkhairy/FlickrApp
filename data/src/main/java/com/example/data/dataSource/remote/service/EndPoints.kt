@@ -1,6 +1,7 @@
 package com.example.data.dataSource.remote.service
 
 import com.example.data.BuildConfig
+import com.example.data.dataSource.remote.dto.Photo
 
 object EndPoints {
 
@@ -13,6 +14,9 @@ object EndPoints {
 
     fun getEndpointUrl(): String =
         "${ALL_GALLERY_PHOTO}&api_key=${BuildConfig.API_KEY}&gallery_id=${GALLERY_ID}&format=json&nojsoncallback=1"
+
+    fun buildImageUrl(photo: Photo): String =
+        "https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg"
 }
 
 
