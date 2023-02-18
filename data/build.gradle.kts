@@ -1,13 +1,8 @@
 import dependencies.BuildVersion
 import dependencies.AndroidX
-import dependencies.Google
-import dependencies.Hilt
 import dependencies.Kotlinx
 import dependencies.Ktor
-import dependencies.Serialization
-import dependencies.Kotlin
 import dependencies.KeyHelper
-import dependencies.Glide
 import dependencies.Room
 
 plugins {
@@ -26,6 +21,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "API_KEY", KeyHelper.getValue("API_KEY"))
+
     }
 
     buildTypes {
