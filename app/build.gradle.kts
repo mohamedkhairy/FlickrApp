@@ -3,12 +3,13 @@ import dependencies.AndroidX
 import dependencies.Google
 import dependencies.Hilt
 import dependencies.Kotlinx
-import dependencies.Ktor
+import dependencies.Room
 import dependencies.Serialization
 import dependencies.Kotlin
 import dependencies.KeyHelper
 import dependencies.Glide
 import dependencies.Navigation
+import dependencies.Ktor
 
 
 
@@ -71,15 +72,8 @@ android {
 dependencies {
     implementation (Kotlin.kotlinStdlib)
 
-    implementation(AndroidX.constraintlayout)
     implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appCompat)
-    implementation(AndroidX.lifecycleRuntime)
-    implementation(AndroidX.lifecycleVmKtx)
-    implementation(AndroidX.livedataKtx)
-    implementation(AndroidX.fragmentKtx)
 
-    implementation(Google.material)
     implementation(Hilt.android)
     implementation(Hilt.hiltNavigation)
     kapt(Hilt.compiler)
@@ -88,13 +82,19 @@ dependencies {
 
     implementation(Serialization.serialization)
 
+    implementation(Room.room)
 
-    implementation(Navigation.navigation_fragment)
-    implementation(Navigation.navigation_ui)
+    implementation(Ktor.core)
+    implementation(Ktor.clientSerialization)
+    implementation(Ktor.android)
+    implementation(Ktor.ktorJson)
+    implementation(Ktor.logging)
 
-    implementation(Glide.glide)
-    kapt(Glide.gildeCompiler)
 
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")

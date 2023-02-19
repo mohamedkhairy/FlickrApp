@@ -4,7 +4,7 @@ object AndroidX {
     private const val coreKtxVersion = "1.6.0"
     val coreKtx by lazy { "androidx.core:core-ktx:$coreKtxVersion" }
 
-    private const val appCompatVersion = "1.3.1"
+    private const val appCompatVersion = "1.6.1"
     val appCompat by lazy { "androidx.appcompat:appcompat:$appCompatVersion" }
 
     private const val lifecycleRuntimeVersion = "2.3.1"
@@ -18,7 +18,7 @@ object AndroidX {
     private const val fragment_ktx = "1.3.4"
     val fragmentKtx by lazy { "androidx.fragment:fragment-ktx:$fragment_ktx" }
 
-    private const val constraintlayoutVersion = "2.1.0"
+    private const val constraintlayoutVersion = "2.1.4"
     val constraintlayout by lazy { "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion" }
 
 

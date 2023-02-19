@@ -7,6 +7,4 @@ object Navigation {
     val navigation_ui by lazy { "androidx.navigation:navigation-ui-ktx:$navigation_version" }
 
 
-
-
 }

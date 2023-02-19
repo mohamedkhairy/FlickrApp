@@ -2,7 +2,6 @@ package com.example.domain.useCase
 
 import com.example.domain.core.DataState
 import com.example.domain.entity.Photos
-import com.example.domain.repository.AllGalleryPhotosRepository
 import com.example.domain.repository.ToggleFavoritesPhotosRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

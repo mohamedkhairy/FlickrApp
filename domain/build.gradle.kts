@@ -1,5 +1,6 @@
 import dependencies.Arrow
 import dependencies.Kotlinx
+import dependencies.BuildVersion
 
 plugins {
     id("com.android.library")
@@ -8,11 +9,11 @@ plugins {
 
 android {
     namespace = "com.example.domain"
-    compileSdk = 32
+    compileSdk = BuildVersion.compileSdk
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = BuildVersion.minSdk
+        targetSdk = BuildVersion.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
