@@ -4,10 +4,7 @@ import com.example.domain.core.DataState
 import com.example.domain.entity.Photos
 import com.example.domain.repository.FavoritesPhotosRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class FavoritesPhotosUseCase @Inject constructor(
@@ -15,7 +12,7 @@ class FavoritesPhotosUseCase @Inject constructor(
 ) {
 
 
-    suspend fun invoke(): Flow<DataState<MutableList<Photos>?>> =
+    suspend fun invoke(): Flow<DataState<List<Photos>?>> =
         flow {
             try {
 

@@ -15,17 +15,28 @@ class ToggleFavoritesPhotosUseCase @Inject constructor(
 ) {
 
 
-    suspend fun invoke(isAddFavorite: Boolean, photos: Photos): Flow<DataState<Long>> =
+    suspend fun remove(photos: Photos): Flow<DataState<Int?>> =
+        flow {
+            try {
+                val result = toggleFavoritesPhotosRepository.removeFromFavorites(photos.id)
+                emit(DataState.Success(result))
+
+            } catch (e: Exception) {
+                emit(DataState.Error(e))
+            }
+        }.onStart {
+            emit(DataState.Loading())
+        }
+            .flowOn(Dispatchers.IO)
+
+
+    suspend fun add(photos: Photos): Flow<DataState<Unit>> =
         flow {
             try {
 
-                if (isAddFavorite) {
-                    val result = toggleFavoritesPhotosRepository.addToFavorites(photos)
-                    emit(DataState.Success(result))
-                }else{
-                    val result = toggleFavoritesPhotosRepository.removeFromFavorites(photos.id)
-                    emit(DataState.Success(result))
-                }
+                val result = toggleFavoritesPhotosRepository.addToFavorites(photos)
+                emit(DataState.Success(result))
+
 
             } catch (e: Exception) {
                 emit(DataState.Error(e))
@@ -39,8 +50,8 @@ class ToggleFavoritesPhotosUseCase @Inject constructor(
     suspend fun isFavorite(id: String): Flow<DataState<Boolean>> =
         flow {
             try {
-                    val result = toggleFavoritesPhotosRepository.isFavorite(id)
-                    emit(DataState.Success(result))
+                val result = toggleFavoritesPhotosRepository.isFavorite(id)
+                emit(DataState.Success(result))
 
             } catch (e: Exception) {
                 emit(DataState.Error(e))

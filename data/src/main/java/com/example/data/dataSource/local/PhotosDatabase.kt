@@ -7,7 +7,6 @@ import com.example.data.dataSource.local.entity.FavoritesPhotosEntity
 
 
 @Database(entities = [FavoritesPhotosEntity::class], version = 1)
-//@TypeConverters(ImageBitmapString::class)
 abstract class PhotosDatabase : RoomDatabase() {
 
     abstract fun favoritesPhotosDao(): PhotosDao

@@ -7,4 +7,7 @@ object Kotlinx {
 
     private const val javaxInjectVersion = "1"
     val javaxInject by lazy { "javax.inject:javax.inject:$javaxInjectVersion" }
+
+    private const val swiperefreshlayoutVersion = "1.1.0"
+    val swiperefreshlayout by lazy { "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayoutVersion" }
 }

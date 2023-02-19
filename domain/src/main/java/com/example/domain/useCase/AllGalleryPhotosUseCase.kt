@@ -21,10 +21,12 @@ class AllGalleryPhotosUseCase @Inject constructor(
                 val result = allGalleryPhotosRepository.getAllGalleryPhotos()
                 when (result) {
                     is Either.Right -> {
+
                         emit(DataState.Success(result.value))
                     }
 
                     is Either.Left -> {
+
                         emit(DataState.Error(result.value))
                     }
                 }

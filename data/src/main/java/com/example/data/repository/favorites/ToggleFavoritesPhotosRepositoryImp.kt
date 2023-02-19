@@ -11,13 +11,13 @@ import javax.inject.Inject
 class ToggleFavoritesPhotosRepositoryImp @Inject constructor(private val photosDto: PhotosDao) : ToggleFavoritesPhotosRepository {
 
 
-    override suspend fun addToFavorites(photos: Photos): Long {
+    override suspend fun addToFavorites(photos: Photos) {
         return withContext(Dispatchers.IO){
             photosDto.save(photos.mapToFavoritePhoto())
         }
     }
 
-    override suspend fun removeFromFavorites(id: String): Long {
+    override suspend fun removeFromFavorites(id: String): Int? {
         return withContext(Dispatchers.IO){
             photosDto.deleteByPhotoId(id)
         }

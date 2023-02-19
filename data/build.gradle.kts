@@ -5,11 +5,14 @@ import dependencies.Ktor
 import dependencies.KeyHelper
 import dependencies.Room
 import dependencies.Arrow
+import dependencies.Serialization
 
 plugins {
     id("com.android.library")
     kotlin("android")
     id ("kotlin-kapt")
+    kotlin("plugin.serialization") version "1.5.31"
+
 }
 
 android {
@@ -52,6 +55,7 @@ dependencies {
     implementation(Kotlinx.javaxInject)
     implementation(Arrow.arrow)
 
+    implementation(Serialization.serialization)
 
     implementation(Ktor.core)
     implementation(Ktor.clientSerialization)
@@ -62,7 +66,6 @@ dependencies {
     implementation(Room.room)
     implementation(Room.roomKtx)
     kapt(Room.roomCompiler)
-    kapt(Room.roomKtx)
 
     implementation(project(":domain"))
 

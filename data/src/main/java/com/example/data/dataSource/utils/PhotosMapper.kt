@@ -6,14 +6,14 @@ import com.example.data.dataSource.remote.service.EndPoints.buildImageUrl
 import com.example.domain.entity.Photos
 
 
-fun ArrayList<FavoritesPhotosEntity>?.mapToDomainPhotos(): MutableList<Photos>? =
-    this?.map {
+fun List<FavoritesPhotosEntity>?.mapToFavoritesDomainPhotos(): List<Photos>? =
+    this?.toMutableList()?.map {
         Photos(
             it.id,
             it.title,
             it.imageUrl
         )
-    }?.toMutableList()
+    }
 
 
 fun List<Photo>?.mapToDomainPhotos(): MutableList<Photos>? =

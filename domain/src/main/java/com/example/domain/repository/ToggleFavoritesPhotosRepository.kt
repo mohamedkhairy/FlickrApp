@@ -4,9 +4,9 @@ import com.example.domain.entity.Photos
 
 interface ToggleFavoritesPhotosRepository {
 
-    suspend fun addToFavorites(photos: Photos): Long
+    suspend fun addToFavorites(photos: Photos)
 
-    suspend fun removeFromFavorites(id: String): Long
+    suspend fun removeFromFavorites(id: String): Int?
 
     suspend fun isFavorite(id: String): Boolean
 }

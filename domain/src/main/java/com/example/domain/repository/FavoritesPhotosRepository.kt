@@ -4,6 +4,6 @@ import com.example.domain.entity.Photos
 
 interface FavoritesPhotosRepository {
 
-    suspend fun getAllFavoritesPhotos(): MutableList<Photos>?
+    suspend fun getAllFavoritesPhotos(): List<Photos>?
 
 }
