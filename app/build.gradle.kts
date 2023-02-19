@@ -20,9 +20,8 @@ plugins {
     id ("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
     kotlin("plugin.serialization") version "1.5.31"
-    id("kotlin-android")
     id ("com.google.devtools.ksp") version "1.6.10-1.0.2"
-    id("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs")
 
 }
 
@@ -75,14 +74,16 @@ dependencies {
     implementation(AndroidX.coreKtx)
 
     implementation(Hilt.android)
-    implementation(Hilt.hiltNavigation)
     kapt(Hilt.compiler)
+    implementation(AndroidX.constraintlayout)
 
     implementation(Kotlinx.coroutinesCore)
 
     implementation(Serialization.serialization)
 
     implementation(Room.room)
+    implementation(Room.roomKtx)
+    kapt(Room.roomCompiler)
 
     implementation(Ktor.core)
     implementation(Ktor.clientSerialization)
